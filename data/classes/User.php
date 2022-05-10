@@ -1,8 +1,10 @@
 <?php 
   include_once __DIR__ . "/Payment.php";
   include_once __DIR__ . "/User.php";
+  include_once __DIR__ . "/../classes/Images.php";
 
   class User{
+    use Images;
     protected $name;
     protected $surname;
     protected $email;
@@ -27,15 +29,39 @@
         if (!$payment instanceof Payment) return false;
         $this->papayment = $payment;
     }
-    public function shop($product){
+    public function shop($products){
+      $price=0;
+      foreach ($products as $product) {
+        $price += $product->getPrice();
+      }
       if($this->registered === true){
-        $price = $product->getPrice() - $product->getPrice()/ 100 * 20;
-        return "hai acquistato l'articolo. Hai pagato: " . $price;
+          $price = $price - $price/ 100 * 20;
+        return "Ha pagato: " . $price;
       }
       else{
-        $price = $product->getPrice();
-        return "hai acquistato l'articolo. Hai pagato: " . $price;
+        return "Ha pagato: " . $price;
       }
+    }
+    public function getName (){
+      return $this->name;
+    }
+    public function getSurName (){
+      return $this->surname;
+    }
+    public function getEmail (){
+      return $this->email;
+    }
+    public function getRegistered (){
+      return $this->registered;
+    }
+    public function getStreet (){
+      return $this->street;
+    }
+    public function getCity (){
+      return $this->city;
+    }
+    public function getState (){
+      return $this->state;
     }
   }
 ?>
