@@ -21,6 +21,10 @@
     new User("Giulio", "Napoli", "giulioscarso@gmail.com", true, "via delle vie", "roma","italia", $payment),
     new User("Giorgia","pellegrini","giorgia@live.it",false,"via casa mia","libertà","mondo",$paymentSecondUser)
   ];
+  
+  $users[0]->setUrl("https://c8.alamy.com/compit/a39tba/uomo-strano-a39tba.jpg");
+
+  $users[1]->setUrl("https://thumbs.dreamstime.com/z/donna-strana-uncombed-redhaired-14936137.jpg");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +33,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP OOP 2</title>
+    <style>
+      img{
+        width: 250px;
+        height:250px;
+      }
+    </style>
   </head>
   <body>
     <?php
       foreach ($users as $user) {?>
       <h3>l'utente: <?= $user->getName() . "\n" . $user->getSurName()?></h3>
+      <img src="<?= $user->getUrl()?>" alt="">
       <h4>
         <?php if($user->getRegistered()) {
           echo "Risulta Registrato ed ha uno sconto del 20% su tutti gli articoli!" ;
