@@ -22,9 +22,9 @@
     new User("Giorgia","pellegrini","giorgia@live.it",false,"via casa mia","libertà","mondo",$paymentSecondUser)
   ];
   
-  $users[0]->setUrl("https://c8.alamy.com/compit/a39tba/uomo-strano-a39tba.jpg");
+  $users[0]->setUrl("https://www.magnesiomarino.it/wp-content/uploads/2020/09/uomo-e-colesterolo-magnesio-1.jpg");
 
-  $users[1]->setUrl("https://thumbs.dreamstime.com/z/donna-strana-uncombed-redhaired-14936137.jpg");
+  $users[1]->setUrl("https://www.nostrofiglio.it/images/2022/03/15/giornata-nazionale-per-la-salute-della-donna_900x760.jpg");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +35,8 @@
     <title>PHP OOP 2</title>
     <style>
       img{
-        width: 250px;
-        height:250px;
+        width: 300px;
+        height:300px;
       }
     </style>
   </head>
